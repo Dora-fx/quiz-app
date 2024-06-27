@@ -1,23 +1,41 @@
-import logo from './logo.svg';
+import React from 'react';
+import Quiz from './Quiz';
 import './App.css';
+
+const questions = [
+  {
+    "question": "In CSS, which of these values CANNOT be used with the \"position\" property?",
+    "answers": [
+      { "text": "static", "isCorrect": false },
+      { "text": "relative", "isCorrect": false },
+      { "text": "center", "isCorrect": true },
+      { "text": "absolute", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "How long is an IPv6 address?",
+    "answers": [
+      { "text": "128 bits", "isCorrect": true },
+      { "text": "64 bits", "isCorrect": false },
+      { "text": "128 bytes", "isCorrect": false },
+      { "text": "32 bits", "isCorrect": false }
+    ]
+  },
+  {
+    "question": "In the server hosting industry IaaS stands for...",
+    "answers": [
+      { "text": "Infrastructure as a Service", "isCorrect": true },
+      { "text": "Internet and a Server", "isCorrect": false },
+      { "text": "Internet as a Service", "isCorrect": false },
+      { "text": "Infrastructure as a Server", "isCorrect": false }
+    ]
+  }
+];
 
 function App() {
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <Quiz questions={questions} />
     </div>
   );
 }
